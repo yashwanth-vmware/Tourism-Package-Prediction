@@ -149,7 +149,7 @@ jobs:
       - name: Model Building (train)
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          MLFLOW_TRACKING_URI: ${{ secrets.MLFLOW_TRACKING_URI }}  # optional; if unset, MLflow will use local ./mlruns
+          MLFLOW_TRACKING_URI: file:./mlruns  # optional; if unset, MLflow will use local ./mlruns
         run: |
           python tourism_project/model_building/train.py
 
